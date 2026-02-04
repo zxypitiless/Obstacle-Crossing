@@ -1,0 +1,38 @@
+{
+  "environment": {
+    "seed": 42,
+    "obstacle_count": 5,
+    "obstacle_height_range": [0.05, 0.25],
+    "obstacle_width_range": [0.1, 0.4],
+    "obstacle_length_range": [0.1, 0.6],
+    "spawn_area": [2.0, 3.0]
+  },
+  "priors": {
+    "footstep_horizon": 6,
+    "com_height": 0.35,
+    "head_height": 0.55,
+    "landing_tolerance": 0.08
+  },
+  "reward": {
+    "success_bonus": 5.0,
+    "collision_penalty": 2.5,
+    "tracking_weight": 1.2,
+    "com_weight": 0.8,
+    "head_weight": 0.5,
+    "energy_weight": 0.1,
+    "stability_weight": 1.0
+  },
+  "curriculum": {
+    "stages": [
+      {"max_height": 0.08, "max_count": 1},
+      {"max_height": 0.15, "max_count": 3},
+      {"max_height": 0.25, "max_count": 6}
+    ],
+    "success_threshold": 0.8
+  },
+  "training": {
+    "episodes": 1000,
+    "episode_length": 400,
+    "log_every": 50
+  }
+}
