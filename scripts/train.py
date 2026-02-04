@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT))
 
 from obstacle_crossing.config import load_config
 from obstacle_crossing.training import SimulatorAdapter, Trainer
